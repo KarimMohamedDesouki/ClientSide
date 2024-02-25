@@ -1,0 +1,88 @@
+<!DOCTYPE html> 
+<html lang="en"> 
+<head> 
+    <meta charset="UTF-8"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <title>Karim custom control</title> 
+    <style> 
+        #video-container { 
+            width: 700px; 
+            margin: 20px auto; 
+        }
+        
+       
+        button { 
+            margin: 5px; 
+            padding: 10px 20px; 
+            cursor: pointer; 
+            border: none; 
+            background-color: #d04848; 
+            color: #fff; 
+            border-radius: 5px; 
+            font-size: 16px; 
+        } 
+    </style> 
+</head> 
+<body> 
+    <div id="video-container"> 
+        <video id="myVideo" src="1.1_what is IoT_.mp4" ></video>
+        <div> 
+            <button id="playButton">Play</button> 
+            <button id="pauseButton">Pause</button>
+            <span id="currentTime">0:00</span> / <span id="duration">0:00</span> 
+            <input type="range" id="seekRange" min="0" value="0"> 
+            <label for="volumeRange">Volume:</label> 
+            <input type="range" id="volumeRange" min="0" max="1" step="0.1" value="1"> 
+            
+            
+        </div> 
+    </div> 
+ 
+    <script> 
+        //making variable for every button
+        var video = document.getElementById('myVideo'); 
+        var playButton = document.getElementById('playButton'); 
+        var pauseButton = document.getElementById('pauseButton'); 
+        var volumeRange = document.getElementById('volumeRange'); 
+        var currentTimeDisplay = document.getElementById('currentTime'); 
+        var durationDisplay = document.getElementById('duration'); 
+        var seekRange = document.getElementById('seekRange'); 
+ 
+        playButton.addEventListener('click', function() { //when clicked calls function
+            video.play();//method which plays the video 
+            console.log("played");
+        }); 
+ 
+        pauseButton.addEventListener('click', function() { //when clicked calls function
+            video.pause();//method which pause the video 
+            console.log("paused"); 
+        }); 
+ 
+        volumeRange.addEventListener('input', function() { //when takes input calls function
+            video.volume = volumeRange.value;// it changes the volume property of the video from input taken by user 0 to 1
+            console.log(video.volume);
+            
+        });
+ 
+        video.addEventListener('timeupdate', function() {//takes update from user
+            currentTimeDisplay.textContent = formatTime(video.currentTime); //takes the currenttime of the video format it with the formattime function and give it to duration of the video
+            seekRange.value = video.currentTime;//takes the currenttime and make it the input of the range
+        });
+ 
+        video.addEventListener('loadedmetadata', function() { 
+            durationDisplay.textContent = formatTime(video.duration);//knows the video duration 
+            seekRange.max = video.duration; //sets duration of the video too seekrange max range
+        }); 
+        function formatTime(seconds) { 
+            var minutes = Math.floor(seconds / 60); //gets the minutes
+            var seconds = Math.floor(seconds % 60); //gets the seconds 
+            return minutes + ':' + seconds; //view date format
+        } 
+        seekRange.addEventListener('input', function() { 
+            video.currentTime = seekRange.value; //go to specified time as it change the currenttime
+        }); 
+ 
+       
+    </script> 
+</body> 
+</html>

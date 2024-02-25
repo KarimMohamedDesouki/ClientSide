@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>color range</title>
+</head>
+<body>
+<div class = "main container">
+    <div class = colorinput>
+        <span>Red:</span>
+        <input type="range" id="red" min="0" max="255"value="0">
+    </div>
+    <div class = "colorinput">
+        <span>Green:</span>
+        <input type="range" id="green" min="0" max="255"value="0">
+    </div>
+    <div class = "colorinput">
+        <span>Blue:</span>
+        <input type="range" id="blue" min="0" max="255" value="0">
+    </div>
+</div>
+    
+    <h1>Hi From Karim Mohamed</h1>
+
+    <script>
+    let text = document.querySelector("h1");
+    const colorInput = document.querySelectorAll("input");
+        RedRange=document.getElementById('red');
+        GreenRange=document.getElementById('green');
+        BlueRange=document.getElementById('blue');  
+    
+    
+
+colorInput[0].addEventListener("input", () => {
+    RedRange = colorInput[0].value
+    setColor();
+})
+colorInput[1].addEventListener("input", () => {
+    GreenRange = colorInput[1].value
+    setColor();
+})
+colorInput[2].addEventListener("input", () => {
+    BlueRange = colorInput[2].value;
+    setColor();
+})
+    
+    function setColor() {
+    text.style.color = `rgb(${RedRange},${GreenRange},${BlueRange})`;
+    } 
+        
+    </script>
+</body>
+</html>
+
