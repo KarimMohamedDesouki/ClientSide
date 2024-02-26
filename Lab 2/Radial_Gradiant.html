@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RadialGradient</title>
+
+</head>
+
+<body>
+    <canvas id="myCanvas" width="500" height="600"></canvas>
+    <script>
+        var canvas = document.getElementById("myCanvas");
+        var context = canvas.getContext("2d");
+
+        // Create outer circle gradient 
+        var circle1 = context.createRadialGradient(150, 150, 50, 150, 150, 120);
+        circle1.addColorStop(0, "blue"); // Darker blue 
+        circle1.addColorStop(1, "white");
+
+        // Draw outer circle 
+        context.beginPath();
+        context.arc(150, 150, 100, 0, 2 * Math.PI);
+        context.fillStyle = circle1;
+        context.fill();
+        context.closePath();
+
+        // Create inner circle gradient 
+        var circle2 = context.createRadialGradient(70, 150, 230, 150, 150, 120); // Left to right gradient 
+        circle2.addColorStop(0, "blue"); // Darker blue on the left 
+        circle2.addColorStop(1, "#7187d1ff"); // White on the right 
+
+        // Draw inner circle 
+        context.beginPath();
+        context.arc(150, 150, 80, 0, 2 * Math.PI);
+        context.fillStyle = circle2;
+        context.fill();
+        context.closePath();
+
+        // Write letter "N" inside the inner circle 
+        context.font = " 130px Arial";
+        context.fillStyle = "white";
+        context.textAlign = "center";
+        context.textBaseline = "middle";
+        context.fillText("N", 150, 160); 
+    </script>
+
+
+</body>
+
+</html>

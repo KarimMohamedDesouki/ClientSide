@@ -1,21 +1,59 @@
 <!doctype html>
 <html lang="en">
+
 <head>
 	<meta charset="UTF-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	<title>Client Side</title>
-	<link rel="stylesheet" href="style.css" />
+	
 </head>
 
 <body>
-	<ul>
+	<ul id="links">
 		<li>
-			<a target="_blank" href="./Lab 1/VideoControls.html" data-text="Lab 1 ">Lab 1 P1</a>
+			<a onclick="Lab1()" data-text="Lab 1 ">Lab 1</a>
 		</li>
 		<li>
-			<a target="_blank" href="./Lab 1/ColorRange.html" data-text="Lab 1 P2">Lab 1 P2</a>
+			<a onclick="Lab2()" data-text="Lab 1 ">Lab 2</a>
 		</li>
-
 	</ul>
+
+	<script>
+		let links = document.getElementById("links");
+		function Lab1() {
+			while (links.firstChild) {
+				links.removeChild(links.firstChild);
+			}
+			let str = `
+		 <li>
+			<a  href="./Lab 1/VideoControls.html" data-text="VideoControls ">VideoControls</a>
+		</li>
+		<li>
+			<a  href="./Lab 1/ColorRange.html" data-text="ColorRange">ColorRange</a>
+		</li>`
+			links.insertAdjacentHTML("beforeend", str);
+		}
+
+		function Lab2() {
+			while (links.firstChild) {
+				links.removeChild(links.firstChild);
+			}
+			let str = `<li>
+			<a  href="./Lab 2/Mapping.html" data-text="Mapping">Mapping</a>
+		</li>
+		<li>
+			<a  href="./Lab 2/Radial_Gradiant.html" data-text="Radial_Gradiant">Radial_Gradiant</a>
+		</li>
+		<li>
+			<a  href="./Lab 2/Paythagorths.html" data-text="Paythagorths">Paythagorths</a>
+		</li>
+		<li>
+			<a  href="./Lab 2/Animation.html" data-text="Animation">Animation</a>
+		</li>`
+			links.insertAdjacentHTML("beforeend", str);
+		}
+
+	</script>
 </body>
+
 </html>

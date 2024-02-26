@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mapping</title>
+    <style>
+        canvas {
+            border: 2px solid black;
+        }
+    </style>
+</head>
+
+<body>
+    <canvas id="myCanvas" width="300" height="300"></canvas>
+    <script>
+        var canvas = document.getElementById('myCanvas');
+        var context = canvas.getContext('2d');
+
+        var gradient1 = context.createLinearGradient(0, 0, 0, 150);
+        gradient1.addColorStop(0, 'green');
+        gradient1.addColorStop(1, 'white');
+
+        context.beginPath();
+        context.fillStyle = gradient1;
+        context.fillRect(0, 0, 300, 220);
+        context.closePath();
+
+        var gradient2 = context.createLinearGradient(0, 300 / 2, 0, 300);
+        gradient2.addColorStop(0, 'blue');
+        gradient2.addColorStop(1, 'white');
+
+        context.beginPath();
+        context.fillStyle = gradient2;
+        context.fillRect(0, 150, 300, 220);
+        context.closePath();
+
+        var grd3 = context.createLinearGradient(0, 140, 0, 150); 
+        grd3.addColorStop(0, "black");
+        grd3.addColorStop(1, "rgba(0,0,0,0)");
+
+        context.beginPath();
+        context.lineWidth = 3;
+        context.strokeStyle = grd3;
+        context.strokeRect(100, 90, 100, 100); 
+        context.closePath();
+    </script>
+</body>
+
+</html>
