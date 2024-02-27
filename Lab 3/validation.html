@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            border: 3px solid black;
+            width: 50%;
+            margin: 15px;
+            padding: 15px;
+        }
+
+        input{
+            display: block;
+            margin-bottom: 30px;
+        }
+
+        input:valid + p{
+            display: none;
+            margin-bottom: 30px; 
+        }
+
+         
+        input:valid{
+            border:2px;
+            outline: 2px solid green;   
+        }
+
+        input:invalid { 
+            border: 2px;
+            outline: 2px solid red;
+        }
+
+       
+        
+    </style>
+</head>
+
+<body>
+    <div>
+        <h1>Change Email Address</h1>
+        <form>
+        <input type="text" placeholder="Username" pattern="[a-z]+" required>
+        <p class = "p1">the required username may be only alphabetical characters</p>
+        <input type="email" placeholder="Email"  required>
+        <p class = "p1">the required Email address may not include special characters other than '@' sign</p>
+        <input type="submit" value="submit" >
+        </form>
+    </div>
+
+</body>
+
+</html>

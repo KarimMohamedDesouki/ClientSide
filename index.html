@@ -14,7 +14,10 @@
 			<a onclick="Lab1()" data-text="Lab 1 ">Lab 1</a>
 		</li>
 		<li>
-			<a onclick="Lab2()" data-text="Lab 1 ">Lab 2</a>
+			<a onclick="Lab2()" data-text="Lab 2 ">Lab 2</a>
+		</li>
+		<li>
+			<a onclick="Lab3()" data-text="Lab 3 ">Lab 3</a>
 		</li>
 	</ul>
 
@@ -40,6 +43,24 @@
 			}
 			let str = `<li>
 			<a  href="./Lab 2/Mapping.html" data-text="Mapping">Mapping</a>
+		</li>
+		<li>
+			<a  href="./Lab 2/Radial_Gradiant.html" data-text="Radial_Gradiant">Radial_Gradiant</a>
+		</li>
+		<li>
+			<a  href="./Lab 2/Paythagorths.html" data-text="Paythagorths">Paythagorths</a>
+		</li>
+		<li>
+			<a  href="./Lab 2/Animation.html" data-text="Animation">Animation</a>
+		</li>`
+			links.insertAdjacentHTML("beforeend", str);
+		}
+		function Lab2() {
+			while (links.firstChild) {
+				links.removeChild(links.firstChild);
+			}
+			let str = `<li>
+			<a  href="./Lab" data-text="Mapping">Mapping</a>
 		</li>
 		<li>
 			<a  href="./Lab 2/Radial_Gradiant.html" data-text="Radial_Gradiant">Radial_Gradiant</a>
