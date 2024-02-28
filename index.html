@@ -20,6 +20,9 @@
 		<li>
 			<a onclick="Lab3()" data-text="Lab 3 ">Lab 3</a>
 		</li>
+		<li>
+			<a onclick="Lab4()" data-text="Lab 4 ">Lab 4</a>
+		</li>
 	</ul>
 
 	<script>
@@ -28,13 +31,15 @@
 			while (links.firstChild) {
 				links.removeChild(links.firstChild);
 			}
-			let str = `
+			let str =
+		`
 		<li>
 			<a  href="./Lab 1/VideoControls.html" data-text="VideoControls ">VideoControls</a>
 		</li>
 		<li>
 			<a  href="./Lab 1/ColorRange.html" data-text="ColorRange">ColorRange</a>
-		</li>`
+		</li>
+		`
 			links.insertAdjacentHTML("beforeend", str);
 		}
 
@@ -42,7 +47,8 @@
 			while (links.firstChild) {
 				links.removeChild(links.firstChild);
 			}
-			let str = `
+			let str =
+		`
 		<li>
 			<a  href="./Lab 2/Mapping.html" data-text="Mapping">Mapping</a>
 		</li>
@@ -61,7 +67,8 @@
 			while (links.firstChild) {
 				links.removeChild(links.firstChild);
 			}
-			let str = `
+			let str = 
+		`
 		<li>
 			<a  href="./Lab 3/validation.html" data-text="Validation">Validation</a>
 		</li>
@@ -70,8 +77,18 @@
 		</li>
 		<li>
 			<a  href="./Lab 3/Spade.html" data-text="Spade">Spade</a>
-		</li>
+		</li>`
+			links.insertAdjacentHTML("beforeend", str);
+		}
+		function Lab4() {
+			while (links.firstChild) {
+				links.removeChild(links.firstChild);
+			}
+			let str = 
 		`
+		<li>
+			<a  href="./Lab 4/BootStrapPage.html" data-text="BootStrapPage">BootStrapPage</a>
+		</li>`
 			links.insertAdjacentHTML("beforeend", str);
 		}
 
